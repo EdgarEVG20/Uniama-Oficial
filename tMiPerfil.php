@@ -468,7 +468,7 @@
 
                                 <div role="tabpanel" class="tab-pane fade" id="IL">
                                     <!-- Formulario IL = Información Laboral -->
-                                    <form class="form mt-3 mb-5" action="server/insert-tMiPerfilIL.php" method="POST">
+                                    <!-- <form class="form mt-3 mb-5" action="server/insert-tMiPerfilIL.php" method="POST"> -->
                                         <h1 class="h5 mb-2 text-gray-800">Informaci&oacute;n Laboral.</h1>
                                         <input type="hidden" name="id" value="<?php echo $idEmpresa ?>">
                                         <input type="hidden" name="idU" value="<?php echo $idUsuario ?>">
@@ -689,7 +689,7 @@
                                                     ?>
                                                 </select>
                                             </div>
-                                             <div class="col-6 pt-2">
+                                            <div class="col-6 pt-2">
                                                 <small>Lugar De Trabajo / Oficina</small>
                                                 <select class="form-control" name="lugarTrabajoOficina" disabled>
                                                     <option value="" disabled selected>Lugar De Trabajo / Oficina</option>
@@ -709,7 +709,27 @@
                                                     ?>
                                                 </select>
                                             </div>
-                                            <div class="col-12 pt-2">
+                                            <div class="col-6 pt-2">
+                                                <small>Horario Laboral: *</small>
+                                                <select class="form-control" name="horarioLaboral" disabled>
+                                                    <option value="" disabled selected>Horario Laboral</option>
+                                                    <?php
+                                                        $horarioLaboral = $dataU['cl_horario_laboral'];
+
+                                                        $query = mysqli_query($conexion, "SELECT * FROM horarios_laborales WHERE id_empresa = '".$idEmpresa."' AND estatus = 1 ORDER BY nombre_horario ASC");
+                                                        while ($data = mysqli_fetch_assoc($query)){
+                                                            $selected = '';
+                                                            if ($horarioLaboral == $data['no_horario']) {
+                                                                echo '<option value="'.$data['no_horario'].'" selected>'.$data["nombre_horario"].'</option>';
+                                                            }
+                                                            else {
+                                                                echo '<option value="'.$data['no_horario'].'">'.$data["nombre_horario"].'</option>';
+                                                            }
+                                                        }
+                                                    ?>
+                                                </select>
+                                            </div>
+                                            <!-- <div class="col-12 pt-2">
                                                 <div class="row">
                                                     <div class="col-3">
                                                     <small>Horario Laboral: *</small>
@@ -718,10 +738,10 @@
                                                         <small>Lunes a Viernes *</small>
                                                         <div class="row">
                                                             <div class="col-6">
-                                                                <input type="time" class="form-control" title="Hora De Entrada" name="HLLunesViernes1" placeholder="Entrada" value="<?php echo $dataU['cl_LaV_entrada'] ?>" required disabled>
+                                                                <input type="time" class="form-control" title="Hora De Entrada" name="HLLunesViernes1" placeholder="Entrada" value="<?php // echo $dataU['cl_LaV_entrada'] ?>" required disabled>
                                                             </div>
                                                             <div class="col-6">
-                                                                <input type="time" class="form-control" title="Hora De Salida" name="HLLunesViernes2" placeholder="Salida" value="<?php echo $dataU['cl_LaV_salida'] ?>" required disabled>    
+                                                                <input type="time" class="form-control" title="Hora De Salida" name="HLLunesViernes2" placeholder="Salida" value="<?php // echo $dataU['cl_LaV_salida'] ?>" required disabled>    
                                                             </div>
                                                         </div>
                                                     </div>
@@ -729,10 +749,10 @@
                                                         <small>S&aacute;bado *</small>
                                                         <div class="row">
                                                             <div class="col-6">
-                                                                <input type="time" class="form-control" title="Hora De Entrada" name="HLSabado1" placeholder="S&aacute;bado" value="<?php echo $dataU['cl_S_entrada'] ?>" required disabled>
+                                                                <input type="time" class="form-control" title="Hora De Entrada" name="HLSabado1" placeholder="S&aacute;bado" value="<?php // echo $dataU['cl_S_entrada'] ?>" required disabled>
                                                             </div>
                                                             <div class="col-6">
-                                                                <input type="time" class="form-control" title="Hora De Salida" name="HLSabado2" placeholder="S&aacute;bado" value="<?php echo $dataU['cl_S_salida'] ?>" required disabled>
+                                                                <input type="time" class="form-control" title="Hora De Salida" name="HLSabado2" placeholder="S&aacute;bado" value="<?php // echo $dataU['cl_S_salida'] ?>" required disabled>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -740,15 +760,15 @@
                                                         <small>Domingo *</small>
                                                         <div class="row">
                                                             <div class="col-6">
-                                                                <input type="time" class="form-control" title="Hora De Entrada" name="HLDomingo1" placeholder="Domingo" value="<?php echo $dataU['cl_D_entrada'] ?>" required disabled>
+                                                                <input type="time" class="form-control" title="Hora De Entrada" name="HLDomingo1" placeholder="Domingo" value="<?php // echo $dataU['cl_D_entrada'] ?>" required disabled>
                                                             </div>
                                                             <div class="col-6">
-                                                                <input type="time" class="form-control" title="Hora De Salida" name="HLDomingo2" placeholder="Domingo" value="<?php echo $dataU['cl_D_salida'] ?>" required disabled>
+                                                                <input type="time" class="form-control" title="Hora De Salida" name="HLDomingo2" placeholder="Domingo" value="<?php // echo $dataU['cl_D_salida'] ?>" required disabled>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
+                                            </div> -->
                                         </div>
 
 <!-- ------------------------------------------------------------------------- -->
@@ -808,7 +828,7 @@
 
                                         <!--<center><button type="submit" class="btn btn-primary">Guardar</button></center>-->
 
-                                    </form>
+                                    <!-- </form> -->
                                 </div>
 
                             </div>

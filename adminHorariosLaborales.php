@@ -66,14 +66,14 @@
                             <div class="col-6">
                                 <small>Tipo Horario *</small>
                                 <select class="form-control" name="tipoHorario" required>
-                                    <option value="1" selected disabled>Tipo de Horario</option>
+                                    <option value="" selected disabled>Tipo de Horario</option>
                                     <option value="1">Tipo 1</option>
                                     <option value="2">Tipo 2</option>
                                 </select>
                             </div>
 
                             <div class="col-4 pt-3">
-                                <small>Lunes *</small>
+                                <small>Lunes</small>
                                 <div class="row">
                                     <div class="col-6">
                                         <small>Entrada</small>
@@ -86,7 +86,7 @@
                                 </div>
                             </div>
                             <div class="col-4 pt-3">
-                                <small>Martes *</small>
+                                <small>Martes</small>
                                 <div class="row">
                                     <div class="col-6">
                                         <small>Entrada</small>
@@ -99,7 +99,7 @@
                                 </div>
                             </div>
                             <div class="col-4 pt-3">
-                                <small>Miercoles *</small>
+                                <small>Miercoles</small>
                                 <div class="row">
                                     <div class="col-6">
                                         <small>Entrada</small>
@@ -112,7 +112,7 @@
                                 </div>
                             </div>
                             <div class="col-4 pt-3">
-                                <small>Jueves *</small>
+                                <small>Jueves</small>
                                 <div class="row">
                                     <div class="col-6">
                                         <small>Entrada</small>
@@ -125,7 +125,7 @@
                                 </div>
                             </div>
                             <div class="col-4 pt-3">
-                                <small>Viernes *</small>
+                                <small>Viernes</small>
                                 <div class="row">
                                     <div class="col-6">
                                         <small>Entrada</small>
@@ -138,7 +138,7 @@
                                 </div>
                             </div>
                             <div class="col-4 pt-3">
-                                <small>S&aacute;bado *</small>
+                                <small>S&aacute;bado</small>
                                 <div class="row">
                                     <div class="col-6">
                                         <small>Entrada</small>
@@ -151,7 +151,7 @@
                                 </div>
                             </div>
                             <div class="col-4 pt-3">
-                                <small>Domingo *</small>
+                                <small>Domingo</small>
                                 <div class="row">
                                     <div class="col-6">
                                         <small>Entrada</small>
