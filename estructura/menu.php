@@ -179,6 +179,13 @@
                     <span>Ausencias</span></a>
             </li>
 
+            <!-- Nav Item - Ausencias -->
+            <li class="nav-item">
+                <a class="nav-link" href="./adminRelojChecador.php">
+                    <i class="fas fa-fw fa-clock"></i>
+                    <span>Reloj Checador</span></a>
+            </li>
+
             <!-- Nav Item - Desempeño -->
             <!--<li class="nav-item">
                 <a class="nav-link" href="./adminDesempeno.php">

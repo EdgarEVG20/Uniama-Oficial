@@ -17,7 +17,7 @@
 
 <head>
     <?php
-        $breadcrumb = "Tablero / Empresa / Horarios Laborales";
+        $breadcrumb = "Tablero / Configuración De Empresa / Empresa / Horarios Laborales";
         include("estructura/metas.php");
         include("estructura/title.php");
         include("estructura/hrefs.php");
@@ -60,11 +60,11 @@
                         <input type="hidden" name="id" value="<?php echo $idEmpresa ?>">
                         <div class="row pt-3 pb-4">
                             <div class="col-6">
-                                <small>Nombre *</small>
-                                <input type="text" class="form-control" name="nombre" placeholder="Nombre del Horario Laboral" required onkeyup="mayusculas(this)">
+                                <!-- <small>Nombre</small> -->
+                                <input type="text" class="form-control" name="nombre" placeholder="Nombre" required onkeyup="mayusculas(this)">
                             </div>
                             <div class="col-6">
-                                <small>Tipo Horario *</small>
+                                <!-- <small>Tipo Horario</small> -->
                                 <select class="form-control" name="tipoHorario" required>
                                     <option value="" selected disabled>Tipo de Horario</option>
                                     <option value="FLEXIBLE">FLEXIBLE</option>
@@ -79,7 +79,7 @@
                     <!-- DataTales -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Horarios Registrados</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Horarios Laborales Registrados</h6>
                         </div>
 
                         <?php

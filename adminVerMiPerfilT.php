@@ -18,7 +18,7 @@
 
 <head>
     <?php
-        $breadcrumb = "Tablero / Tu Empresa / Ver Archivos";
+        $breadcrumb = "Tablero / Información De Colaboradores / Ver Perfil";
         include("estructura/metas.php");
         include("estructura/title.php");
         include("estructura/hrefs.php");
@@ -53,7 +53,7 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Ver Informaci&oacute;n De Perfil</h1>
+                    <h1 class="h3 mb-2 text-gray-800">Ver Perfil</h1>
                     <br>
 
                     <?php

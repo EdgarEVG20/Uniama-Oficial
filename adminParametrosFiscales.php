@@ -21,7 +21,7 @@
 
 <head>
     <?php
-        $breadcrumb = "Tablero / Empresa / Parámetros Fiscales";
+        $breadcrumb = "Tablero / Configuración De Empresa / Empresa / Parámetros Fiscales";
         include("estructura/metas.php");
         include("estructura/title.php");
         include("estructura/hrefs.php");
@@ -60,7 +60,7 @@
 
                     <!-- Formulario -->
                     <form class="form mt-3 mb-5" action="server/update-adminParametrosFiscales.php" method="POST">
-                        <h1 class="h5 mb-2 text-gray-800">Cambiar R&eacute;gimen Fiscal.</h1>
+                        <h1 class="h5 mb-2 text-gray-800">Configurar R&eacute;gimen Fiscal.</h1>
                         <input type="hidden" name="id" value="<?php echo $idEmpresa ?>">
 
                         <?php

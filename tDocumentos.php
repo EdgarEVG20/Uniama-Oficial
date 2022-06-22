@@ -18,7 +18,7 @@
 
 <head>
     <?php
-        $breadcrumb = "Tablero / Tu Perfil / Mis Documentos";
+        $breadcrumb = "Tablero / Mis Datos / Documentos";
         include("estructura/metas.php");
         include("estructura/title.php");
         include("estructura/hrefs.php");

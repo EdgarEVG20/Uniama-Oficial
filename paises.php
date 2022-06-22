@@ -16,7 +16,7 @@
 
 <head>
     <?php
-        $breadcrumb = "Tablero / Catálogos / Países";
+        $breadcrumb = "Tablero / Administrador / Catálogos / Países";
         include("estructura/metas.php");
         include("estructura/title.php");
         include("estructura/hrefs.php");
@@ -72,7 +72,7 @@
                         <div class="card-header py-3">
                             <div class="row justify-content-between">
                                 <div class="col-6">
-                                    <h6 class="m-0 font-weight-bold text-primary">Registro de datos</h6>
+                                    <h6 class="m-0 font-weight-bold text-primary">Paises Registrados</h6>
                                 </div>
                                 <div class="col-4">
                                     <input type="text" class="form-control" id="busqueda" name="busqueda" placeholder="Buscar..." onkeyup="cargarBusquedaPaises(); mayusculas(this)">

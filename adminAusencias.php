@@ -17,7 +17,7 @@
 
 <head>
     <?php
-        $breadcrumb = "Tablero / Empresa / Ausencias";
+        $breadcrumb = "Tablero / Configuración De Empresa / Empresa / Ausencias";
         include("estructura/metas.php");
         include("estructura/title.php");
         include("estructura/hrefs.php");
@@ -122,7 +122,7 @@
                     <!-- DataTables -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Registro de datos</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Ausencias Registradas</h6>
                         </div>
 
                         <?php

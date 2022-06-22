@@ -18,7 +18,7 @@
 
 <head>
     <?php
-        $breadcrumb = "Tablero / Tu Empresa / Empleados";
+        $breadcrumb = "Tablero / Información De Colaboradores / Colaboradores";
         include("estructura/metas.php");
         include("estructura/title.php");
         include("estructura/hrefs.php");
@@ -53,11 +53,11 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Empleados</h1>
+                    <h1 class="h3 mb-2 text-gray-800">Colaboradores</h1>
 
                     <!-- Formulario -->
                     <form class="form mt-3 mb-5" action="server/insert-adminEmpleados.php" method="POST">
-                        <h1 class="h5 mb-2 text-gray-800">Agregar Empleados.</h1>
+                        <h1 class="h5 mb-2 text-gray-800">Agregar Colaboradores.</h1>
                         <input type="hidden" name="id" value="<?php echo $idEmpresa ?>">
                         <div class="row pt-3 pb-4">
                             <div class="col-6">
@@ -85,7 +85,7 @@
                     <!-- DataTales -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Registro de datos</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Colaboradores Registrados</h6>
                         </div>
 
                         <?php

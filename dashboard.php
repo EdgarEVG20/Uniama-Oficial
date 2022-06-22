@@ -16,13 +16,14 @@
     <?php
         $consultaAvisoPrivacidad = mysqli_num_rows(mysqli_query($conexion, "SELECT * FROM avisos_privacidad WHERE id_empresa = '$idEmpresa'"));
         
-        if ($consultaAvisoPrivacidad == 0) {
+        if ($nivelUsuario == 2 || $nivelUsuario == 3 || $nivelUsuario == 4) {
+            if ($consultaAvisoPrivacidad == 0) {
     ?>
         <div class="d-sm-flex align-items-center justify-content-between mb-4 bg-warning">
             <h1 class="h4 mt-2 mb-2 text-gray-800 text-center">UNIAMA TE INVITA A QUE CONOZCAS SU AVISO DE PRIVACIDAD EN EL MANEJO Y TRATAMIENTO DE LA INFORMACI&Oacute;N DE TU EMPRESA.</h1>
         </div>
-
     <?php
+            }
         }
     ?>
     <div class="row">

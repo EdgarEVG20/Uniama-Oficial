@@ -17,7 +17,7 @@
 
 <head>
     <?php
-        $breadcrumb = "Tablero / Empresa / Organigrama";
+        $breadcrumb = "Tablero / Configuración De Empresa / Empresa / Organigrama";
         include("estructura/metas.php");
         include("estructura/title.php");
         include("estructura/hrefs.php");

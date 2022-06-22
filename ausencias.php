@@ -16,7 +16,7 @@
 
 <head>
     <?php
-        $breadcrumb = "Tablero / Catálogos / Ausencias";
+        $breadcrumb = "Tablero / Administrador / Catálogos / Ausencias";
         include("estructura/metas.php");
         include("estructura/title.php");
         include("estructura/hrefs.php");
@@ -90,7 +90,7 @@
                         <div class="card-header py-3">
                             <div class="row justify-content-between">
                                 <div class="col-6">
-                                    <h6 class="m-0 font-weight-bold text-primary">Registro de datos</h6>
+                                    <h6 class="m-0 font-weight-bold text-primary">Ausencias Registradas</h6>
                                 </div>
                                 <div class="col-4">
                                     <input type="text" class="form-control" id="busqueda" name="busqueda" placeholder="Buscar..." onkeyup="cargarBusquedaAusencias(); mayusculas(this)">

@@ -18,7 +18,7 @@
 
 <head>
     <?php
-        $breadcrumb = "Tablero / Tu Empresa / Ver Archivos";
+        $breadcrumb = "Tablero / Información De Colaboradores / Ver Archivos";
         include("estructura/metas.php");
         include("estructura/title.php");
         include("estructura/hrefs.php");

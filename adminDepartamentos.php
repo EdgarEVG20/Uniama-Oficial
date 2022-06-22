@@ -17,7 +17,7 @@
 
 <head>
     <?php
-        $breadcrumb = "Tablero / Empresa / Departamentos";
+        $breadcrumb = "Tablero / Configuración De Empresa / Empresa / Departamentos";
         include("estructura/metas.php");
         include("estructura/title.php");
         include("estructura/hrefs.php");
@@ -60,7 +60,7 @@
                         <input type="hidden" name="id" value="<?php echo $idEmpresa ?>">
                         <div class="row pt-3  pb-4">
                             <div class="col-4">
-                                <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre De Departamento" required onkeyup="mayusculas(this)" maxlength="30">
+                                <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre" required onkeyup="mayusculas(this)" maxlength="30">
                             </div>
                             <div class="col-4">
                                 <select class="form-control" id="jerarquia" name="jerarquia" required onchange="cargarDependenciaDepartamentos()">
@@ -108,7 +108,7 @@
                     <!-- DataTales -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Registro de datos</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Departamentos Registrados</h6>
                         </div>
 
                         <?php

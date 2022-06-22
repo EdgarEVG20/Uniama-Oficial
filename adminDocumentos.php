@@ -17,7 +17,7 @@
 
 <head>
     <?php
-        $breadcrumb = "Tablero / Empresa / Documentos";
+        $breadcrumb = "Tablero / Configuración De Empresa / Empresa / Documentos";
         include("estructura/metas.php");
         include("estructura/title.php");
         include("estructura/hrefs.php");
@@ -115,7 +115,7 @@
                     <!-- DataTales -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Registro de datos</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Documentos Registrados</h6>
                         </div>
 
                         <?php

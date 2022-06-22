@@ -16,7 +16,7 @@
 
 <head>
     <?php
-        $breadcrumb = "Tablero / Clientes / Nuevo Cliente";
+        $breadcrumb = "Tablero / Administrador / Clientes / Nuevo Cliente";
         include("estructura/metas.php");
         include("estructura/title.php");
         include("estructura/hrefs.php");

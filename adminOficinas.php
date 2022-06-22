@@ -17,7 +17,7 @@
 
 <head>
 	<?php
-		$breadcrumb = "Tablero / Empresa / Oficinas";
+		$breadcrumb = "Tablero / Configuración De Empresa / Empresa / Oficinas";
 		include("estructura/metas.php");
 		include("estructura/title.php");
 		include("estructura/hrefs.php");
@@ -60,7 +60,7 @@
 						<input type="hidden" name="id" value="<?php echo $idEmpresa ?>">
 						<div class="row pt-3">
 							<div class="col-12">
-								<input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre De oficina" required onkeyup="mayusculas(this)" maxlength="100">
+								<input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre" required onkeyup="mayusculas(this)" maxlength="100">
 							</div>
 						</div>
 						<div class="row pt-3 pb-4">
@@ -119,7 +119,7 @@
 					<!-- DataTables -->
 					<div class="card shadow mb-4">
 						<div class="card-header py-3">
-							<h6 class="m-0 font-weight-bold text-primary">Registro de datos</h6>
+							<h6 class="m-0 font-weight-bold text-primary">Oficinas Registradas</h6>
 						</div>
 						<?php
 							$res = mysqli_query($conexion, "SELECT empresas_oficinas.id_oficina, empresas_oficinas.nombre_oficina, empresas_oficinas.calle, empresas_oficinas.noExt, empresas_oficinas.noInt, _cat_colonias.nombre_colonia, _cat_colonias.codigo_postal, _cat_municipios.nombre_municipio, _cat_estados.estado, _cat_pais.nombre_pais, empresas_oficinas.correo, empresas_oficinas.telefono, empresas_oficinas.estatus FROM empresas_oficinas INNER JOIN _cat_colonias ON empresas_oficinas.clave_colonia=_cat_colonias.clave_colonia AND empresas_oficinas.codigo_postal=_cat_colonias.codigo_postal INNER JOIN _cat_municipios ON empresas_oficinas.clave_municipio=_cat_municipios.clave_municipio AND empresas_oficinas.clave_estado=_cat_municipios.clave_estado INNER JOIN _cat_estados ON empresas_oficinas.clave_estado=_cat_estados.catalogo INNER JOIN _cat_pais ON empresas_oficinas.clave_pais=_cat_pais.clave_pais WHERE id_empresa = $idEmpresa ORDER BY empresas_oficinas.nombre_oficina ASC");

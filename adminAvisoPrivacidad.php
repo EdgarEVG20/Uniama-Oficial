@@ -17,7 +17,7 @@
 
 <head>
     <?php
-        $breadcrumb = "Tablero / Empresa / Aviso de privacidad";
+        $breadcrumb = "Tablero / Configuración De Empresa / Empresa / Aviso de privacidad";
         include("estructura/metas.php");
         include("estructura/title.php");
         include("estructura/hrefs.php");
