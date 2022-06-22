@@ -178,7 +178,7 @@
 												</label>
 											</td>
 											<td class="btn-modificar">
-												<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-edit-oficina<?php echo $data['id_oficina']; ?>"><i class="fas fa-user-edit"></i></button>
+												<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-edit-oficina<?php echo $data['id_oficina']; ?>"><i class="fas fa-edit"></i></button>
 											</td>
 											<td class="btn-eliminar">
 												<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-delete-oficina<?php echo $data['id_oficina']; ?>"><i class="fas fa-trash-alt"></i></button>

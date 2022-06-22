@@ -89,7 +89,6 @@
                                         $dataTotalesPerfil = mysqli_fetch_assoc($datosTotalesPerfil);
                                         $resCamposLlenos = $dataTotalesPerfil['totalCampos'] - $dataTotalesPerfil['totalVacios'];
                                         $data = ($resCamposLlenos * 100) / $dataTotalesPerfil['totalCampos'];
-
                                     ?>
                                     <div class="row no-gutters align-items-center  mt-3">
                                         <div class="col-auto">

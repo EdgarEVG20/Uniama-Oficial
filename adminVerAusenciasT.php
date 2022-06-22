@@ -156,7 +156,7 @@
                                                 </center>
                                             </td>
                                             <td class="btn-modificar">
-                                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-edit-tAusencia<?php echo $data['id_ausencia'] ?>"><i class="fas fa-user-edit"></i></button>
+                                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-edit-tAusencia<?php echo $data['id_ausencia'] ?>"><i class="fas fa-edit"></i></button>
                                             </td>
                                         </tr>
                                     </tbody>

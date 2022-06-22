@@ -210,11 +210,11 @@
                                                 <?php
                                                 if ($data['estatus'] == 1) {
                                                 ?>
-                                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-edit-ausencia<?php echo $data['id_ausencia']; ?>"><i class="fas fa-user-edit"></i></button>
+                                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-edit-ausencia<?php echo $data['id_ausencia']; ?>"><i class="fas fa-edit"></i></button>
                                                 <?php
                                                 } elseif ($data['estatus'] == 2 || $data['estatus'] == 3) {
                                                 ?>
-                                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-edit-ausencia<?php echo $data['id_ausencia']; ?>" disabled><i class="fas fa-user-edit"></i></button>
+                                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-edit-ausencia<?php echo $data['id_ausencia']; ?>" disabled><i class="fas fa-edit"></i></button>
                                                 <?php
                                                 }
                                                 ?>
