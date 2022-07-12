@@ -107,17 +107,39 @@
                                                         <input type="hidden" name="vigencia" value="<?php echo $data['vigencia'] ?>">
                                                         <input type="hidden" name="idDocumento" value="<?php echo $data['id_documento'] ?>">
                                                         <input type="file" name="archivo" hidden/>
-                                                        <button type="submit" class="btn btn-primary" name="subirArchivo"><i class="fas fa-file-upload"></i></button>
                                                         <?php
                                                             $idDocumentoCatalogo = $data['id_documento'];
                                                             $consultaIdDocumento = mysqli_num_rows(mysqli_query($conexion, "SELECT * FROM archivos_documentos WHERE id_documento = $idDocumentoCatalogo AND id_empresa = $idEmpresa AND id_usuario = $idUsuario"));
-                                                            if ($consultaIdDocumento == 0) {
+                                                            
+                                                            $conAplica = mysqli_query($conexion, "SELECT * FROM archivos_documentos WHERE id_documento = $idDocumentoCatalogo AND id_empresa = $idEmpresa AND id_usuario = $idUsuario");
+                                                            $resAplica = mysqli_fetch_assoc($conAplica);
+                                                        ?>
+
+                                                        <?php
+                                                            if ($resAplica['aplica'] == 2) {
+                                                        ?>
+                                                                <button type="submit" class="btn btn-primary" name="subirArchivo" disabled><i class="fas fa-file-upload"></i></button>
+                                                        <?php
+                                                            } else {
+                                                        ?>
+                                                                <button type="submit" class="btn btn-primary" name="subirArchivo"><i class="fas fa-file-upload"></i></button>
+                                                        <?php
+                                                            }
+                                                        ?>
+
+
+                                                        <?php
+                                                            if ($consultaIdDocumento == 0 || $resAplica['aplica'] == 2 || $resAplica['estatus'] == 2) {
                                                         ?>
                                                                 <button type="button" class="btn btn-success" name="verArchivo" disabled><i class="fas fa-eye"></i></button>
                                                         <?php
                                                             } else {
+                                                                // if ($resAplica['aplica'] == 2) {
                                                         ?>
-
+                                                                <!-- <button type="button" class="btn btn-success" name="verArchivo" disabled><i class="fas fa-eye"></i></button> -->
+                                                        <?php
+                                                                // } else {
+                                                        ?>
                                                                 <button type="button" class="btn btn-success" name="verArchivo" data-toggle="modal" data-target="#modal-ver-documento<?php echo $data['id_documento']; ?>"><i class="fas fa-eye"></i></button>
 
                                                                 <!-- <a type="button" class="btn btn-success" name="verArchivo" target="_blank" href="<?php // echo 'http://'.$_SERVER['HTTP_HOST'].'/11CuatrimestresEstadias/Proyecto/UniamaOficial/Clientes/'.$idEmpresa.'/empleados/'.$idUsuario.'/'.$nombreSinAcentos.'.pdf' ?>"><i class="fas fa-eye"></i></a> -->
@@ -131,11 +153,12 @@
                                                                 <!--<a type="button" class="btn btn-success" name="verArchivo" target="_blank" href="<?php //echo 'http://'.$_SERVER['HTTP_HOST'].'/Clientes/'.$idEmpresa.'/empleados/'.$idUsuario.'/'.$nombreSinAcentos.'.pdf' ?>"><i class="fas fa-eye"></i></a>-->
 
                                                         <?php
+                                                                // }
                                                             }
                                                         ?>
                                                         
                                                         <?php
-                                                            if ($consultaIdDocumento == 0) {
+                                                            if ($consultaIdDocumento == 0 || $resAplica['aplica'] == 2 || $resAplica['estatus'] == 2) {
                                                         ?>
                                                                 <button type="button" class="btn btn-danger" name="eliminarArchivo" disabled><i class="fas fa-trash-alt"></i></button>
                                                         <?php
@@ -155,9 +178,15 @@
                                                             <i class="fas fa-times fa-3x documentIcon" style="color: red;"></i>
                                                     <?php
                                                         } else {
+                                                            if ($resAplica['estatus'] == 2) {
+                                                    ?>
+                                                            <i class="fas fa-ban fa-3x documentIcon" style="color: red;"></i>
+                                                    <?php
+                                                            } else {
                                                     ?>
                                                             <i class="fas fa-check fa-3x documentIcon" style="color: green;"></i>
                                                     <?php
+                                                            }
                                                         }
                                                     ?>
                                                 </div>

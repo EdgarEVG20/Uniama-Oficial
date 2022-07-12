@@ -21,7 +21,6 @@
                     <th>Acciones</th>
                 </tr>
 	        </thead>
-	        
 	';
 
 	if ($buscar->num_rows > 0) {
@@ -62,10 +61,18 @@
                     </td>
 				</tr>
 			 </tbody>
-
 			';
-		}		
+		}
+	} else {
+		$tabla.='
+			<tbody>
+				<tr>
+					<td colspan="5" style="text-align: center">Lo sentimos, no se han encontrado resultados para tu búsqueda.</td>
+				</tr>
+			</tbody>
+		';
 	}
+
 	$tabla.="</table>";
 	echo $tabla;
 ?>

@@ -66,7 +66,7 @@
 
                         <?php 
                             //$query = mysqli_query($conexion, "SELECT * FROM catalogo_documentos WHERE id_empresa = $idEmpresa AND estatus = 1 ORDER BY nombre ASC");
-                            $query = mysqli_query($conexion, "SELECT catalogo_documentos.id_documento, catalogo_documentos.id_empresa, catalogo_documentos.nombre, catalogo_documentos.vigencia, catalogo_documentos.obligatorio, usuarios_perfiles.ips_rfc, catalogo_documentos.estatus FROM catalogo_documentos INNER JOIN usuarios_perfiles ON catalogo_documentos.id_empresa = usuarios_perfiles.id_empresa AND usuarios_perfiles.id_usuario = $idVerUsuario AND catalogo_documentos.estatus = 1 ORDER BY catalogo_documentos.nombre ASC");
+                            $query = mysqli_query($conexion, "SELECT catalogo_documentos.id_documento, catalogo_documentos.id_empresa, catalogo_documentos.nombre, catalogo_documentos.vigencia, catalogo_documentos.obligatorio, catalogo_documentos.estatus FROM catalogo_documentos INNER JOIN usuarios_perfiles ON catalogo_documentos.id_empresa = usuarios_perfiles.id_empresa AND usuarios_perfiles.id_usuario = $idVerUsuario AND catalogo_documentos.estatus = 1 ORDER BY catalogo_documentos.nombre ASC");
 
                             while ($data = mysqli_fetch_assoc($query)){
                                 //$rfc = $data['ips_rfc'];
@@ -118,13 +118,32 @@
                                                         <input type="file" name="archivo" hidden/>
 
                                                         <div class="row">
-                                                            <div class="col-ml-3 ml-1">
-                                                                <button type="submit" class="btn btn-primary" name="subirArchivo"><i class="fas fa-file-upload"></i></button>
-                                                            </div>
                                                         <?php
                                                             $idDocumentoCatalogo = $data['id_documento'];
                                                             $consultaIdDocumento = mysqli_num_rows(mysqli_query($conexion, "SELECT * FROM archivos_documentos WHERE id_documento = $idDocumentoCatalogo AND id_empresa = $idEmpresa AND id_usuario = $idVerUsuario"));
-                                                            if ($consultaIdDocumento == 0) {
+
+                                                            $conAplica = mysqli_query($conexion, "SELECT * FROM archivos_documentos WHERE id_documento = $idDocumentoCatalogo AND id_empresa = $idEmpresa AND id_usuario = $idVerUsuario");
+                                                            $resAplica = mysqli_fetch_assoc($conAplica);
+                                                        ?>
+                                                            
+                                                        <?php
+                                                            if ($resAplica['aplica'] == 2) {
+                                                        ?>
+                                                                <div class="col-ml-3 ml-1">
+                                                                    <button type="submit" class="btn btn-primary" name="subirArchivo" disabled><i class="fas fa-file-upload"></i></button>
+                                                                </div>
+                                                        <?php
+                                                            } else {
+                                                        ?>
+                                                                <div class="col-ml-3 ml-1">
+                                                                    <button type="submit" class="btn btn-primary" name="subirArchivo"><i class="fas fa-file-upload"></i></button>
+                                                                </div>
+                                                        <?php
+                                                            }
+                                                        ?>
+                                                            
+                                                        <?php
+                                                            if ($consultaIdDocumento == 0 || $resAplica['aplica'] == 2 || $resAplica['estatus'] == 2) {
                                                         ?>
                                                                 <div class="col-ml-3 ml-1">
                                                                     <button type="button" class="btn btn-success" name="verArchivo" disabled><i class="fas fa-eye"></i></button>
@@ -148,7 +167,7 @@
                                                             }
                                                         ?>
                                                         <?php
-                                                            if ($consultaIdDocumento == 0) {
+                                                            if ($consultaIdDocumento == 0 || $resAplica['aplica'] == 2 || $resAplica['estatus'] == 2) {
                                                         ?>
                                                                 <div class="col-ml-3 ml-1">
                                                                     <button type="button" class="btn btn-danger" name="eliminarArchivo" disabled><i class="fas fa-trash-alt"></i></button>
@@ -167,7 +186,7 @@
                                                         ?>
                                                                 <div class="col-ml-3 ml-1">
                                                                     <label class="switch">
-                                                                        <input type="checkbox" id="<?php echo $data['id_documento'] ?>" name="btnSwitch" onclick="updateEstatus(<?php echo $data['id_documento'] ?>, <?php echo $data['id_documento'] ?>, <?php echo $idEmpresa ?>, <?php echo $idVerUsuario ?>, <?php echo $data['vigencia'] ?>);" value="<?php echo $data['estatus']?>"<?php echo $data['estatus'] == '1' ? 'checked' : '2' ;?>>
+                                                                        <input type="checkbox" id="<?php echo $data['id_documento'] ?>" name="btnSwitch" onclick="updateEstatus(<?php echo $data['id_documento'] ?>, <?php echo $data['id_documento'] ?>, <?php echo $idEmpresa ?>, <?php echo $idVerUsuario ?>, <?php echo $data['vigencia'] ?>);" value="<?php echo $resAplica['aplica']?>"<?php echo $resAplica['aplica'] == '1' ? 'checked' : '2' ;?>>
                                                                         <span class="slider round"></span>
                                                                     </label>
                                                                 </div>
@@ -186,9 +205,15 @@
                                                             <i class="fas fa-times fa-3x documentIcon" style="color: red;"></i>
                                                     <?php
                                                         } else {
+                                                            if ($resAplica['estatus'] == 2) {
+                                                    ?>
+                                                            <i class="fas fa-ban fa-3x documentIcon" style="color: red;"></i>
+                                                    <?php
+                                                            } else {
                                                     ?>
                                                             <i class="fas fa-check fa-3x documentIcon" style="color: green;"></i>
                                                     <?php
+                                                            }
                                                         }
                                                     ?>
                                                 </div>
@@ -354,7 +379,7 @@
             dataType: 'json',
             url: 'server/updateEstatusObligacion.php',
             type: 'POST',
-            data: {"id":idAdDocumentosObligacion, "estado":cambioEstado, "idBD":'id_archivo', "tablaBD":'archivos_documentos', "idE":idE, "idU":idU, "vigencia":vigencia},
+            data: {"id":idAdDocumentosObligacion, "estado":cambioEstado, "idE":idE, "idU":idU, "vigencia":vigencia},
             success:function(data){
             },
         });

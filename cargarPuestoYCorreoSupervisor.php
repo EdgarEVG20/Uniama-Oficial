@@ -8,17 +8,17 @@
 	$res = mysqli_fetch_assoc($buscar);
 
 	$puestoCorreoSupervisor.='
-								<div class="row">
-	                                <div class="col-6">
-	                                    <small>Puesto</small>
-	                                    <input type="text" class="form-control" placeholder="Puesto" value="'.$res['nombre_puesto'].'">
-	                                    <input type="hidden" name="puestoSupervisor" value="'.$res['id_puesto'].'">
-	                                </div>
-	                                <div class="col-6">
-	                                    <small>Correo Electr&oacute;nico</small>
-	                                    <input type="text" class="form-control" name="correoElectronicoSupervisor" placeholder="Correo Electr&oacute;nico" value="'.$res['correo'].'">
-	                                </div>
-	                            </div>
+							<div class="row">
+                                <div class="col-6">
+                                    <small>Puesto</small>
+                                    <input type="text" class="form-control" placeholder="Puesto" value="'.$res['nombre_puesto'].'">
+                                    <input type="hidden" name="puestoSupervisor" value="'.$res['id_puesto'].'">
+                                </div>
+                                <div class="col-6">
+                                    <small>Correo Electr&oacute;nico</small>
+                                    <input type="text" class="form-control" name="correoElectronicoSupervisor" placeholder="Correo Electr&oacute;nico" value="'.$res['correo'].'">
+                                </div>
+                            </div>
                             ';
 	
 	echo $puestoCorreoSupervisor;

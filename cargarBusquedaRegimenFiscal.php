@@ -20,7 +20,6 @@
                     <th>Acciones</th>
 	            </tr>
 	        </thead>
-	        
 	';
 
 	if ($buscar->num_rows > 0) {
@@ -43,8 +42,7 @@
 				<option value="MORAL">MORAL</option>';
 			}
 
-			$tabla.=
-			'
+			$tabla.='
 			<tbody>
 				<tr>
 					<td>'.$fila['clave_regimen'].'</td>
@@ -97,8 +95,17 @@
 				</div>
 			</div>
 			';
-		}		
+		}
+	} else {
+		$tabla.='
+			<tbody>
+				<tr>
+					<td colspan="5" style="text-align: center">Lo sentimos, no se han encontrado resultados para tu búsqueda.</td>
+				</tr>
+			</tbody>
+		';
 	}
+
 	$tabla.="</table>";
 	echo $tabla;
 ?>

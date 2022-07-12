@@ -607,6 +607,22 @@ function cargarBusquedaAusenciasUsuarios(idEmpresa) {
 	})
 }
 
+function cargarBusquedaRelojChacador(idEmpresa) {
+	nombreRelojChecadorUsuarios = document.getElementById('busqueda').value;
+
+	$.ajax({
+		cache: false,
+		url : 'cargarBusquedaRelojChacador.php',
+		type : 'POST',
+		dataType : 'html',
+		data : { id: idEmpresa, nombreRelojChecadorUsuarios: nombreRelojChecadorUsuarios },
+		})
+
+	.done(function(resultado) {
+		$("#mostrarTabla").html(resultado);
+	})
+}
+
 
 
 

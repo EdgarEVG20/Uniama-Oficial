@@ -19,15 +19,13 @@
                     <th>Estatus</th>
 	            </tr>
 	        </thead>
-	        
 	';
 
 	if ($buscar->num_rows > 0) {
 		while($fila= $buscar->fetch_assoc()) {
 			$condicion = $fila['estatus'] == '1' ? 'checked' : '2';
 
-			$tabla.=
-			'
+			$tabla.='
 			<tbody>
 				<tr>
 					<td>'.$fila['clave_pais'].'</td>
@@ -41,10 +39,18 @@
                     </td>
 				</tr>
 			 </tbody>
-
 			';
-		}		
+		}
+	} else {
+		$tabla.='
+			<tbody>
+				<tr>
+					<td colspan="4" style="text-align: center">Lo sentimos, no se han encontrado resultados para tu búsqueda.</td>
+				</tr>
+			</tbody>
+		';
 	}
+
 	$tabla.="</table>";
 	echo $tabla;
 ?>

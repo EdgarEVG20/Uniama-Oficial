@@ -113,6 +113,14 @@
                 </div>
             ';
         }
+    } else {
+        $tabla.='
+                <p style="margin: 0px; padding: 0px; text-align: center"></P>
+                <tr>
+                    <td colspan="7" style="text-align: center">Lo sentimos, no se han encontrado resultados para tu búsqueda.</td>
+                </tr>
+        ';
     }
+
     echo $tabla;
 ?>

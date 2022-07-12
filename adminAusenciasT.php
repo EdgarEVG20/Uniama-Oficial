@@ -191,7 +191,7 @@
     mysqli_close($conexion);
 ?>
 
-<script language="JavaScript">
+<!-- <script language="JavaScript">
     function updateEstatus(idAdDepartamentos, nombreSwitch)
     {
         if(document.getElementById(nombreSwitch).checked==false)
@@ -212,7 +212,7 @@
             },
         });
     }
-</script>
+</script> -->
 
 </body>
 </html>

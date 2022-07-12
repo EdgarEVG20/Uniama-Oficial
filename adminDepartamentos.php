@@ -89,7 +89,7 @@
                             </div>
                             <div class="col-4">
                                 <select class="form-control" id="dependeDe" name="dependeDe" required>
-                                    <option value="#" disabled selected>Depende De</option>
+                                    <option value="" disabled selected>Depende De</option>
                                     <?php
                                         $query = mysqli_query($conexion, "SELECT * FROM catalogo_departamentos WHERE id_empresa = '$idEmpresa' AND estatus = 1");
                                         while ($data = mysqli_fetch_assoc($query)){

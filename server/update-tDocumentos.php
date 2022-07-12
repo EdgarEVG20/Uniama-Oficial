@@ -48,8 +48,15 @@
                     if (move_uploaded_file($temp, "../Clientes/".$id."/empleados/".$idU."/".$nombreSinAcentos.".pdf")) { //"_".$rfc.
                         //Cambiamos los permisos del archivo a 777 para poder modificarlo posteriormente
                         chmod($folder, 0777);
-                        //Se crea la secuencia sql para almacenar ciertos datos en la base de datos
-                        $insert = mysqli_query($conexion, "INSERT INTO archivos_documentos VALUES (null, '$idDocumento', '$id', '$idU', '$vigencia', '$fechaActual', 1)");
+
+                        $conDocExistente = mysqli_num_rows(mysqli_query($conexion, "SELECT * FROM archivos_documentos WHERE id_documento = $idDocumento AND id_empresa = $id AND id_usuario = $idU"));
+
+                        if ($conDocExistente == 0) {
+                            //Se crea la secuencia sql para almacenar ciertos datos en la base de datos
+                            $insert = mysqli_query($conexion, "INSERT INTO archivos_documentos (id_archivo, id_documento, id_empresa, id_usuario, vigencia, fecha_upload, estatus) VALUES (null, '$idDocumento', '$id', '$idU', '$vigencia', '$fechaActual', 1)");
+                        } else {
+                            $update = mysqli_query($conexion, "UPDATE archivos_documentos SET fecha_upload = '".$fechaActual."', estatus = 1 WHERE id_documento = $idDocumento AND id_empresa = $id AND id_usuario = $idU");
+                        }
                         //Mostramos el mensaje de que se ha subido co éxito
                         //echo '<script> alert("Se ha subido correctamente la imagen."); </script>';
                         echo '<script> alert("¡Tu documento se ha subido con éxito!.");  window.history.go(-1); </script>';

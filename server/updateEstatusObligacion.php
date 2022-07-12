@@ -9,8 +9,6 @@
 
     $idDoc = $_POST['id'];
     $estatus = $_POST['estado'];
-    $idBD = $_POST['idBD'];
-    $tablaBD = $_POST['tablaBD'];
     $idEmpresa = $_POST['idE'];
     $idU = $_POST['idU'];
     $vigencia = $_POST['vigencia'];
@@ -23,14 +21,16 @@
 
     // $query = $conexión->query($conExistenciaDocumento);
 
-    if ($row < 1) {
-        $sql = "INSERT INTO archivos_documentos VALUES (null, '$idDoc', '$idEmpresa', '$idU', '$vigencia', '$fechaActual', 2)";
+    if ($rows < 1) {
+        $sql = "INSERT INTO archivos_documentos VALUES (null, '$idDoc', '$idEmpresa', '$idU', '$vigencia', '$fechaActual', 1, 2)";
         $query = $pdo->prepare($sql);
         $query->execute();
-    } elseif ($row > 0) {
-        $sql = "UPDATE ".$tablaBD." SET estatus = ".$estatus." WHERE ".$idBD." = ".$idDoc;
+
+    } elseif ($rows > 0) {
+        $sql = "UPDATE archivos_documentos SET aplica = ".$estatus." WHERE id_documento = ".$idDoc." AND id_usuario = ".$idU;
         $query = $pdo->prepare($sql);
         $query->execute();
+        
     }
 
 ?>

@@ -64,7 +64,7 @@
                             </div>
                             <div class="col-6">
                                 <select class="form-control form-select-sm" id="departamento" name="departamento" required>
-                                    <option value="#" disabled selected>Cat&aacute;logo De Departamentos</option>
+                                    <option value="" disabled selected>Cat&aacute;logo De Departamentos</option>
                                     <?php
                                         $query = mysqli_query($conexion, "SELECT * FROM catalogo_departamentos WHERE id_empresa = '$idEmpresa' AND estatus = 1");
                                         while ($data = mysqli_fetch_assoc($query)){

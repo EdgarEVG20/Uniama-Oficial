@@ -304,8 +304,15 @@
                                                                     <input type="date" class="form-control" name="fechaFin2" placeholder="Fecha Final" value="<?php echo $data['fecha_fin'] ?>">
                                                                 </div>
                                                             </div>
+                                                            <div class="row">
+                                                                <div class="col-12 mt-3">
+                                                                    <div class="d-sm-flex align-items-center justify-content-between bg-warning rounded">
+                                                                        <h1 class="h5 mt-2 text-gray-800 text-center">ASEGURATE DE VOLVER A CARGAR TU DOCUMENTO SI HACES ALGUN CAMBIO.</h1>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
                                                             <div class="row pb-4">
-                                                                <div class="col-6 mt-3">
+                                                                <div class="col-12 mt-3">
                                                                     <small>Comprobante</small>
                                                                     <label class="input-group-btn pointer">
                                                                         <span class="btn btn-primary btn-file" style="position: static; width: 441px; height: 38px;">

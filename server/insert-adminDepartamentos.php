@@ -11,7 +11,7 @@
 
     if ($consultaNombre == 0) {
         if (empty($dependeDe)) {
-            $insert = "INSERT INTO catalogo_departamentos VALUES (null, '$id', '$nombre', '', '$jerarquia', 1)";
+            $insert = "INSERT INTO catalogo_departamentos VALUES (null, '$id', '$nombre', 0, '$jerarquia', 1)";
             $resInsert = mysqli_query($conexion, $insert);
         } else {
             $insert = "INSERT INTO catalogo_departamentos VALUES (null, '$id', '$nombre', '$dependeDe', '$jerarquia', 1)";

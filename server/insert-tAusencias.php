@@ -133,7 +133,7 @@
                                                                     border-color: #0800ff;
                                                                     border-width: 3px;
                                                                     border-style: solid;
-                                                                        border-radius:35px;" href="https://uniama.velor.mx/">ENTRAR</a></center>
+                                                                        border-radius:35px;" href="https://uniama.velor.mx/pruebas/">ENTRAR</a></center>
                                     <br><br>
                                 ';
                             $mail->Body = $mensaje;
@@ -206,7 +206,7 @@
                                                             border-color: #0800ff;
                                                             border-width: 3px;
                                                             border-style: solid;
-                                                                border-radius:35px;" href="https://uniama.velor.mx/">ENTRAR</a></center>
+                                                                border-radius:35px;" href="https://uniama.velor.mx/pruebas/">ENTRAR</a></center>
                             <br><br>
                         ';
                     $mail->Body = $mensaje;

@@ -18,7 +18,6 @@
                     <th>Acciones</th>
 	            </tr>
 	        </thead>
-	        
 	';
 
 	if ($buscar->num_rows > 0) {
@@ -26,8 +25,7 @@
 			$condicion = $fila['estatus'] == '1' ? 'checked' : '2';
 			$idDeAusencia = $fila['id_ausencia'];
 
-			$tabla.=
-			'
+			$tabla.='
 			<tbody>
 				<tr>
 					<td>'.$fila['nombre'].'</td>
@@ -70,8 +68,17 @@
 				</div>
 			</div>
 			';
-		}		
+		}
+	} else {
+		$tabla.='
+			<tbody>
+				<tr>
+					<td colspan="3" style="text-align: center">Lo sentimos, no se han encontrado resultados para tu búsqueda.</td>
+				</tr>
+			</tbody>
+		';
 	}
+
 	$tabla.="</table>";
 	echo $tabla;
 ?>
